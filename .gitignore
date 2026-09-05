@@ -1,0 +1,27 @@
+# macOS
+.DS_Store
+
+# 编辑器
+.vscode/
+.idea/
+
+# 日志
+*.log
+
+# Cloudflare wrangler 本地缓存
+.wrangler/
+worker/.wrangler/
+
+# 本地基准样本与导出结果
+benchmark/fixtures/
+benchmark/results/
+
+# 构建
+node_modules/
+dist/
+tsconfig.tsbuildinfo
+
+# 本地开发工具与审计产物
+.playwright-cli/
+output/
+trimtail-audit.md

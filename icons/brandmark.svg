@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 220" role="img" aria-labelledby="title desc">
+  <title id="title">TinyPress</title>
+  <desc id="desc">A folded geometric press mark in blue and graphite.</desc>
+  <path fill="#2563EB" d="M22 27h84l82 64-82 42H22l82-53z"/>
+  <path fill="#1F2933" d="M22 133l82-42h84l-82 42z"/>
+  <path fill="#2563EB" d="M22 193h84l82-64-82-42H22l82 53z"/>
+</svg>

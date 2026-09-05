@@ -1,0 +1,482 @@
+/* ============================================================
+   尾巴图片工坊 · 设计令牌(与主站「小熊猫工具盒」同源)
+   ============================================================ */
+:root {
+  --paper: #ffffff;
+  --card: #fbf8f0;
+  --cream: #f0e4d2;
+  --ink: #4a2a1a;
+  --muted: #8f6f58;
+  --orange: #f46c15;
+  --rust: #bb2f0d;
+  --peach: #ed945b;
+  --line: rgba(74, 42, 26, 0.12);
+  --r-sm: 12px;
+  --r-md: 18px;
+  --r-lg: 24px;
+  --r-pill: 999px;
+  --max: 900px;
+  --font: -apple-system, BlinkMacSystemFont, "PingFang SC",
+    "Hiragino Sans GB", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font);
+  background: var(--paper);
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+}
+
+button,
+select,
+input {
+  font: inherit;
+}
+
+/* ---------- 顶栏 ---------- */
+.topbar {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+}
+
+.crumb {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: var(--muted);
+  text-decoration: none;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.crumb:hover {
+  color: var(--orange);
+}
+
+.crumb img {
+  border-radius: 6px;
+}
+
+.crumb-sep {
+  color: var(--line);
+}
+
+.crumb-here {
+  color: var(--ink);
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  white-space: nowrap;
+}
+
+.app-version {
+  color: var(--muted);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  white-space: nowrap;
+}
+
+.crumb-tail {
+  border-radius: 6px;
+}
+
+.topbar-note {
+  margin-left: auto;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+/* ---------- 标题 ---------- */
+.wrap {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 20px 72px;
+}
+
+.title-block {
+  padding: 18px 0 22px;
+}
+
+.title-block h1 {
+  margin: 0 0 8px;
+  font-size: clamp(30px, 5vw, 42px);
+  font-weight: 900;
+  letter-spacing: 0.01em;
+}
+
+.title-block .en {
+  font-size: 0.55em;
+  font-weight: 800;
+  color: var(--muted);
+  letter-spacing: 0.14em;
+}
+
+.title-block p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+/* ---------- 选图区 ---------- */
+.drop {
+  border: 2px dashed var(--line);
+  border-radius: var(--r-lg);
+  background: var(--card);
+  padding: 30px;
+  cursor: pointer;
+  transition: border-color 160ms ease, background 160ms ease;
+  min-height: 150px;
+  display: grid;
+  place-items: center;
+  text-align: center;
+}
+
+.drop:hover,
+.drop-over {
+  border-color: var(--orange);
+  background: #fff7ef;
+}
+
+.drop-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.drop-empty p {
+  margin: 0;
+  font-weight: 700;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.drop-main {
+  color: var(--ink) !important;
+  font-size: 15px !important;
+}
+
+.ringtail {
+  width: 96px;
+  height: auto;
+}
+
+.drop-has {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  width: 100%;
+  text-align: left;
+}
+
+.preview {
+  width: 132px;
+  height: 132px;
+  object-fit: contain;
+  border-radius: var(--r-md);
+  background: #fff;
+  border: 1px solid var(--line);
+  flex: none;
+}
+
+.drop-meta {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.drop-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 6px;
+}
+
+/* ---------- Tabs ---------- */
+.tabs {
+  display: flex;
+  gap: 8px;
+  margin: 22px 0 14px;
+  flex-wrap: wrap;
+}
+
+.tab {
+  border: 1.5px solid var(--line);
+  background: var(--card);
+  color: var(--muted);
+  padding: 9px 20px;
+  border-radius: var(--r-pill);
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.tab-active {
+  background: var(--orange);
+  border-color: var(--orange);
+  color: #fffdf7;
+}
+
+/* ---------- 工序面板 ---------- */
+.panel {
+  border: 1px solid var(--line);
+  border-radius: var(--r-lg);
+  background: var(--card);
+  padding: 22px;
+}
+
+.grid-lines {
+  display: grid;
+  gap: 16px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.field-label {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--muted);
+}
+
+.field input[type="number"],
+.field select {
+  appearance: none;
+  -webkit-appearance: none;
+  border: 1px solid var(--line);
+  border-radius: var(--r-sm);
+  padding: 10px 38px 10px 12px;
+  background: #fff;
+  color: var(--ink);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 14 14'%3E%3Cpath d='m3.5 5.25 3.5 3.5 3.5-3.5' fill='none' stroke='%238f6f58' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  cursor: pointer;
+}
+
+.field select:focus {
+  outline: 2px solid rgba(244, 108, 21, 0.22);
+  outline-offset: 1px;
+}
+
+.field input[type="range"] {
+  accent-color: var(--orange);
+}
+
+.field input[type="color"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 76px;
+  height: 38px;
+  padding: 0;
+  border: 1px solid var(--line);
+  border-radius: var(--r-md);
+  background: transparent;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.field input[type="color"]::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+
+.field input[type="color"]::-webkit-color-swatch,
+.field input[type="color"]::-moz-color-swatch {
+  border: 0;
+  border-radius: var(--r-md);
+}
+
+.field-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.seg {
+  display: inline-flex;
+  border: 1px solid var(--line);
+  border-radius: var(--r-pill);
+  overflow: hidden;
+  background: #fff;
+  width: fit-content;
+  flex-wrap: wrap;
+}
+
+.seg-btn {
+  border: none;
+  background: transparent;
+  color: var(--muted);
+  padding: 8px 16px;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.seg-on {
+  background: var(--orange);
+  color: #fffdf7;
+}
+
+.btn {
+  border: none;
+  border-radius: var(--r-pill);
+  padding: 10px 22px;
+  cursor: pointer;
+  font-weight: 800;
+}
+
+.btn-primary {
+  background: var(--orange);
+  color: #fffdf7;
+  justify-self: start;
+}
+
+.btn-primary:hover {
+  background: var(--rust);
+}
+
+.btn-primary:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+.notice {
+  margin-top: 14px;
+  padding: 10px 14px;
+  border-radius: var(--r-sm);
+  background: #f5f0e6;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.notice-error {
+  background: #fff0eb;
+  color: var(--rust);
+}
+
+.btn-ghost {
+  background: #fff;
+  border: 1.5px solid var(--line);
+  color: var(--muted);
+  padding: 6px 14px;
+  font-size: 13px;
+}
+
+/* ---------- 结果 ---------- */
+.result {
+  margin-top: 18px;
+  border-radius: var(--r-lg);
+  border: 1px solid var(--line);
+  background: var(--card);
+  padding: 18px 22px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.result-line {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-weight: 700;
+}
+
+.result-line strong {
+  color: var(--rust);
+}
+
+.result-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: var(--r-pill);
+  background: var(--orange);
+}
+
+.result-before {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.result .btn {
+  margin-left: auto;
+}
+
+/* ---------- 页脚 ---------- */
+.foot {
+  text-align: center;
+  padding: 26px 20px 40px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.muted {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.btn-select {
+  padding: 12px 30px;
+  font-size: 15px;
+}
+
+/* ---------- 响应式 ---------- */
+@media (max-width: 560px) {
+  .topbar {
+    flex-wrap: wrap;
+    row-gap: 5px;
+  }
+
+  .topbar .crumb,
+  .topbar .crumb-sep,
+  .topbar .crumb-here {
+    flex: none;
+  }
+
+  .drop-has {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .preview {
+    width: 100px;
+    height: 100px;
+  }
+  .field-row {
+    grid-template-columns: 1fr;
+  }
+  .topbar-note {
+    flex-basis: 100%;
+    width: auto;
+    margin-left: 0;
+    margin-top: 1px;
+    padding-left: 0;
+  }
+}
+
+/* ---------- 键盘可访问性：清晰的焦点指示 ---------- */
+:focus-visible {
+  outline: 2px solid var(--orange);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
